@@ -201,8 +201,8 @@ class TileSet {
     if (tile.image != null) {
       return Rectangle(0, 0, tile.image.width, tile.image.height);
     }
-    final row = (tile.localId - firstGId) ~/ columns;
-    final column = (tile.localId - firstGId) % columns;
+    final row = tile.localId ~/ columns;
+    final column = tile.localId % columns;
     final x = margin + (column * (tileWidth + spacing));
     final y = margin + (row * (tileHeight + spacing));
     return Rectangle(x, y, tileWidth + spacing, tileHeight + spacing);

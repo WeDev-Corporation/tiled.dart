@@ -3,7 +3,7 @@ part of tiled;
 class TiledMap {
   String backgroundColor;
   int compressionLevel;
-  List<EditorSetting> editorSettings;
+  List<EditorSetting> editorSettings = [];
   int height;
   int hexSideLength;
   bool infinite;
@@ -28,7 +28,7 @@ class TiledMap {
   // Convenience Methods
   Tile getTileByGId(int tileGId) {
     if (tileGId == 0) {
-      return Tile(0);
+      return null;
     }
     final TileSet tileset = getTilesetByTileGId(tileGId);
     return tileset.tiles.firstWhere(
